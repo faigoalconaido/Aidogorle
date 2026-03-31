@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torneo di Calcetto a 5 su Erba – AIDO Bergamo | 7 Giugno 2026</title>
+<meta name="description" content="Torneo di Calcetto a 5 su Erba in ricordo di Giorgio Brignoli, Alberto Ravanelli e Cristina Bonassi. 7 Giugno 2026 – Centro Sportivo di Cavernago (BG). Organizzato da AIDO Bergamo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosso:   #cc1f1f;
+  --rosso-d: #9e1515;
+  --oro:     #f0c030;
+  --verde:   #1a7a2e;
+  --verde-m: #23a03a;
+  --verde-l: #3dcc5a;
+  --bianco:  #f8f8f2;
+  --scuro:   #071009;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco);overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.top-bar{
+  background:var(--rosso);
+  padding:10px 24px;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.92rem;letter-spacing:0.15em;text-transform:uppercase;color:#fff;
+}
+.top-bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4)}
+.top-bar a:hover{border-color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,0.025) 0px,rgba(255,255,255,0.025) 30px,transparent 30px,transparent 60px),
+    linear-gradient(160deg,#040d05 0%,#0c2210 50%,#071009 100%);
+  padding:60px 24px 0;overflow:hidden;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-cta{justify-content:center!important}
+}
+.hero-memory{font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.5);margin-bottom:6px;animation:fadeUp 0.7s ease both}
+.hero-names{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(0.95rem,2vw,1.2rem);color:var(--oro);letter-spacing:0.06em;
+  margin-bottom:24px;line-height:1.7;animation:fadeUp 0.8s ease both;
+}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,7.5rem);line-height:0.88;animation:fadeUp 0.9s ease both}
+.hero-title .t1{color:var(--bianco)}
+.hero-title .t2{color:var(--verde-l)}
+.hero-title .t3{color:var(--oro)}
+.hero-tagline{
+  margin-top:28px;border-left:4px solid var(--rosso);padding-left:16px;
+  font-style:italic;font-size:clamp(1rem,2vw,1.25rem);
+  color:rgba(255,255,255,0.75);line-height:1.6;animation:fadeUp 1s ease both;
+}
+.hero-tagline strong{color:var(--bianco)}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp 1.1s ease both}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:3px;border:none;cursor:pointer;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.btn-red{background:var(--rosso);color:#fff}
+.btn-gold{background:var(--oro);color:var(--scuro)}
+.hero-flyer{position:relative;animation:fadeUp 0.9s ease both}
+.flyer-img{
+  width:100%;max-width:460px;border-radius:8px;display:block;margin:0 auto;
+  box-shadow:0 24px 80px rgba(0,0,0,0.7),0 0 0 3px rgba(240,192,48,0.35);
+}
+@media(max-width:850px){.flyer-img{max-width:320px}}
+.date-strip{
+  background:var(--rosso);margin-top:60px;padding:22px 40px;
+  display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;
+}
+.date-strip .d{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3.8rem);color:#fff;line-height:1}
+.date-strip .sep{color:rgba(255,255,255,0.3);font-size:2rem}
+.date-strip .loc{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(0.95rem,2.5vw,1.4rem);color:var(--oro);
+  letter-spacing:0.1em;text-transform:uppercase;
+}
+
+/* ── SEZIONI ── */
+.section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--verde-l);margin-bottom:10px;
+}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);line-height:1;
+  color:var(--bianco);margin-bottom:40px;
+}
+
+/* ── INFO CARDS ── */
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-top:3px solid var(--verde-m);
+  border-radius:8px;padding:26px 22px;
+  transition:background 0.2s,border-color 0.2s;
+}
+.card:hover{background:rgba(255,255,255,0.07);border-color:rgba(61,204,90,0.35)}
+.card .icon{font-size:2rem;margin-bottom:12px;display:block}
+.card h3{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--verde-l);margin-bottom:6px;
+}
+.card p{font-size:1rem;color:var(--bianco);line-height:1.5}
+.card .big{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--oro);line-height:1}
+
+/* ── PREMI ── */
+.premi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:580px){.premi-grid{grid-template-columns:1fr}}
+.premio{border-radius:10px;padding:36px 28px;text-align:center;position:relative;overflow:hidden}
+.premio.primo{background:linear-gradient(140deg,#2a1800,#5a3800);border:2px solid var(--oro)}
+.premio.secondo{background:linear-gradient(140deg,#181818,#2a2a2a);border:2px solid #999}
+.premio .medal{font-size:3.5rem;display:block;margin-bottom:12px}
+.premio .pos{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);margin-bottom:8px;
+}
+.premio .importo{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;line-height:1;display:block}
+.premio.primo .importo{color:var(--oro)}
+.premio.secondo .importo{color:#ccc}
+.premio .nota{font-size:0.88rem;color:rgba(255,255,255,0.5);margin-top:8px;font-style:italic}
+
+/* ── ISCRIZIONE ── */
+.iscrizione-box{
+  background:linear-gradient(135deg,rgba(26,122,46,0.18),rgba(37,168,64,0.08));
+  border:1px solid rgba(61,204,90,0.25);border-radius:12px;padding:44px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+}
+@media(max-width:680px){.iscrizione-box{grid-template-columns:1fr;padding:28px 22px}}
+.iscrizione-box h3{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--bianco);margin-bottom:20px}
+.quota-row{
+  display:flex;align-items:baseline;gap:12px;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.quota-row:last-child{border:none}
+.quota-label{font-size:0.95rem;color:rgba(255,255,255,0.6);flex:1}
+.quota-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--oro)}
+.contatti-box p.ct-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:10px;
+}
+.contatti-box a{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  color:var(--verde-l);text-decoration:none;margin-bottom:8px;
+  transition:color 0.2s;
+}
+.contatti-box a:hover{color:var(--oro)}
+
+/* ── ATTIVITÀ ── */
+.attivita-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.attivita-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);
+  border-radius:8px;padding:28px 18px;text-align:center;
+  transition:transform 0.2s,border-color 0.2s;
+}
+.attivita-card:hover{transform:translateY(-4px);border-color:rgba(240,192,48,0.3)}
+.attivita-card .icon{font-size:2.4rem;margin-bottom:12px;display:block}
+.attivita-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--bianco);margin-bottom:6px}
+.attivita-card p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.5}
+
+/* ── MAPPA ── */
+.mappa-section{background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.mappa-inner{
+  max-width:1100px;margin:0 auto;padding:80px 24px;
+  display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;
+}
+@media(max-width:780px){.mappa-inner{grid-template-columns:1fr}}
+.mappa-info h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--bianco);line-height:1;margin-bottom:8px}
+.mappa-addr{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:30px}
+.mappa-addr strong{color:var(--verde-l);display:block;font-size:1.05rem;margin-bottom:2px}
+.maps-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;padding:15px 24px;border-radius:4px;
+  transition:transform 0.15s,background 0.15s;margin-bottom:12px;
+}
+.maps-btn:hover{transform:translateY(-2px)}
+.maps-gmaps{background:var(--verde-m);color:#fff}
+.maps-gmaps:hover{background:#1b8a30}
+.maps-apple{background:rgba(255,255,255,0.07);color:var(--bianco);border:1px solid rgba(255,255,255,0.12)}
+.maps-apple:hover{background:rgba(255,255,255,0.13)}
+.map-frame{border-radius:10px;overflow:hidden;border:2px solid rgba(61,204,90,0.22);aspect-ratio:4/3}
+.map-frame iframe{width:100%;height:100%;border:0;display:block}
+
+/* ── LOTTERIA ── */
+.lottery{
+  background:linear-gradient(90deg,var(--verde),#1a5c20,var(--verde));
+  padding:22px;text-align:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.4rem,4vw,2.3rem);letter-spacing:0.18em;color:var(--oro);
+  border-top:3px solid var(--oro);border-bottom:3px solid var(--oro);
+}
+
+/* ── ORGANIZZATORI ── */
+.org-section{
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,0.02) 0,rgba(255,255,255,0.02) 30px,transparent 30px,transparent 60px),
+    linear-gradient(160deg,#040d05,#0c2210);
+  padding:80px 24px;
+}
+.org-inner{max-width:1100px;margin:0 auto}
+
+.org-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:var(--bianco);text-align:center;margin-bottom:50px;
+  position:relative;
+}
+.org-title::after{
+  content:'';display:block;width:80px;height:3px;
+  background:linear-gradient(90deg,var(--rosso),var(--oro));
+  margin:12px auto 0;border-radius:2px;
+}
+
+.org-group{margin-bottom:56px}
+.org-group-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);text-align:center;margin-bottom:28px;
+  display:flex;align-items:center;gap:16px;
+}
+.org-group-label::before,
+.org-group-label::after{
+  content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);
+}
+
+.logos-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:24px;
+}
+
+.logo-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;
+  padding:16px;
+  display:flex;flex-direction:column;align-items:center;
+  width:200px;
+  transition:transform 0.2s,border-color 0.2s,background 0.2s;
+  overflow:hidden;
+}
+.logo-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(240,192,48,0.4);
+  background:rgba(255,255,255,0.09);
+}
+.logo-card img{
+  width:100%;height:160px;
+  object-fit:contain;
+  border-radius:8px;
+  display:block;
+}
+
+/* organizzatori più grandi */
+.org-group.big-logos .logo-card{width:220px}
+.org-group.big-logos .logo-card img{height:180px}
+
+/* ── FOOTER ── */
+footer{
+  background:#040a05;padding:30px 24px;text-align:center;
+  border-top:3px solid var(--rosso);
+}
+footer p{font-size:0.85rem;color:rgba(255,255,255,0.35);line-height:1.9}
+footer a{color:var(--verde-l);text-decoration:none}
+footer a:hover{color:var(--oro)}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🔴 AIDO – Associazione Italiana Donatori di Organi &nbsp;|&nbsp;
+  <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">aidobergamo.it</a>
+</div>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-memory">in ricordo di</p>
+      <p class="hero-names">
+        Giorgio Brignoli<br>
+        Alberto Ravanelli<br>
+        Cristina Bonassi
+      </p>
+      <h1 class="hero-title">
+        <span class="t1">Torneo di</span><br>
+        <span class="t2">Calcetto</span><br>
+        <span class="t3">a 5 su Erba</span>
+      </h1>
+      <div class="hero-tagline">
+        <em>Un assist per la vita: scegli il sì.</em><br>
+        <strong>Il gioco più bello è donare.</strong>
+      </div>
+      <div class="hero-cta">
+        <a href="tel:035235326" class="btn btn-red">📞 035 235326</a>
+        <a href="https://www.aidobergamo.it" target="_blank" rel="noopener" class="btn btn-gold">🌐 aidobergamo.it</a>
+      </div>
+    </div>
+    <div class="hero-flyer">
+      <img class="flyer-img" src="img/volantino.jpg" alt="Volantino Torneo di Calcetto AIDO Bergamo 7 Giugno 2026">
+    </div>
+  </div>
+
+  <div class="date-strip">
+    <span class="d">7 Giugno 2026</span>
+    <span class="sep">|</span>
+    <span class="loc">📍 Centro Sportivo di Cavernago (BG)</span>
+    <span class="sep">|</span>
+    <span class="loc">⚽ Calcetto a 5 su erba</span>
+  </div>
+</header>
+
+<!-- ── INFO ── -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Informazioni generali</p>
+    <h2 class="section-title">Tutto quello che devi sapere</h2>
+    <div class="grid-4">
+      <div class="card">
+        <span class="icon">📅</span>
+        <h3>Data</h3>
+        <p class="big">7 GIU</p>
+        <p>Domenica 2026</p>
+      </div>
+      <div class="card">
+        <span class="icon">📍</span>
+        <h3>Sede</h3>
+        <p class="big" style="font-size:1.4rem;line-height:1.3">Centro Sportivo<br>Cavernago</p>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.5);margin-top:4px">Via G. Ungaretti 66, 24050 BG</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Squadra</h3>
+        <p>10 atleti per squadra<br>+ atleti extra a €7 cad.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚽</span>
+        <h3>Formato</h3>
+        <p>5 giocatori su campo<br>in <strong>erba naturale</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PREMI ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <p class="section-label">Premi</p>
+    <h2 class="section-title">In palio per i vincitori</h2>
+    <div class="premi-grid">
+      <div class="premio primo">
+        <span class="medal">🥇</span>
+        <p class="pos">Prima classificata</p>
+        <span class="importo">€1.000</span>
+        <p class="nota">Buono da utilizzare a beneficio della comunità</p>
+      </div>
+      <div class="premio secondo">
+        <span class="medal">🥈</span>
+        <p class="pos">Seconda classificata</p>
+        <span class="importo">€500</span>
+        <p class="nota">Buono da utilizzare a beneficio della comunità</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ISCRIZIONE ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <p class="section-label">Iscrizioni</p>
+    <h2 class="section-title">Come partecipare</h2>
+    <div class="iscrizione-box">
+      <div>
+        <h3>Quote di iscrizione</h3>
+        <div class="quota-row">
+          <span class="quota-label">Quota squadra (10 atleti)</span>
+          <span class="quota-val">€ 150</span>
+        </div>
+        <div class="quota-row">
+          <span class="quota-label">Ogni atleta aggiuntivo</span>
+          <span class="quota-val">€ 7</span>
+        </div>
+        <div class="quota-row">
+          <span class="quota-label">Pranzo atleti</span>
+          <span class="quota-val" style="color:var(--verde-l)">✅ Incluso</span>
+        </div>
+      </div>
+      <div class="contatti-box">
+        <p class="ct-label">Info &amp; Iscrizioni</p>
+        <a href="tel:035235326">📞 035 235326</a>
+        <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">🌐 aidobergamo.it</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ATTIVITÀ ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <p class="section-label">Durante la giornata</p>
+    <h2 class="section-title">Molto più di una partita</h2>
+    <div class="attivita-grid">
+      <div class="attivita-card">
+        <span class="icon">🍽️</span>
+        <h3>Pranzo Atleti</h3>
+        <p>Pranzo incluso per tutti gli atleti iscritti</p>
+      </div>
+      <div class="attivita-card">
+        <span class="icon">📣</span>
+        <h3>Area Tifosi</h3>
+        <p>Possibilità di pranzare anche per accompagnatori</p>
+      </div>
+      <div class="attivita-card">
+        <span class="icon">🏐</span>
+        <h3>Beach Volley</h3>
+        <p>Campo beach volley disponibile tutto il giorno</p>
+      </div>
+      <div class="attivita-card">
+        <span class="icon">🎠</span>
+        <h3>Area Ragazzi</h3>
+        <p>Spazio giochi dedicato ai più giovani</p>
+      </div>
+      <div class="attivita-card">
+        <span class="icon">🎟️</span>
+        <h3>Lotteria</h3>
+        <p>Superpremi in palio per tutti i presenti</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAPPA ── -->
+<div class="mappa-section">
+  <div class="mappa-inner">
+    <div class="mappa-info">
+      <p class="section-label">Come raggiungerci</p>
+      <h2>Trovaci sul campo</h2>
+      <div class="mappa-addr">
+        <strong>Centro Sportivo Comunale M.llo Luigi D'Andrea</strong>
+        Via G. Ungaretti 66<br>24050 Cavernago (BG)
+      </div>
+      <a class="maps-btn maps-gmaps"
+         href="https://www.google.com/maps/dir/?api=1&destination=45.6215116,9.7597173&destination_place_id=ChIJ2Xroxd1EgUcRreYV-7KpNb0"
+         target="_blank" rel="noopener">
+        📍 Portami lì con Google Maps
+      </a>
+      <a class="maps-btn maps-apple"
+         href="https://maps.apple.com/?daddr=45.6215116,9.7597173&dirflg=d"
+         target="_blank" rel="noopener">
+        🗺️ Portami lì con Apple Maps
+      </a>
+    </div>
+    <div class="map-frame">
+      <iframe
+        loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.5!2d9.7597173!3d45.6215116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781449de87a7ad9%3A0xbd35a9b2fb15e6ad!2sCentro%20sportivo%20comunale%20M.llo%20Luigi%20D&#39;Andrea!5e0!3m2!1sit!2sit!4v1700000000000"
+        title="Centro Sportivo Cavernago">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- LOTTERIA -->
+<div class="lottery">🎟️ Lotteria con Superpremi per tutti i Presenti 🎟️</div>
+
+<!-- ── ORGANIZZATORI ── -->
+<section class="org-section">
+  <div class="org-inner">
+    <h2 class="org-title">Chi c'è dietro questo torneo</h2>
+
+    <!-- Organizzato da -->
+    <div class="org-group big-logos">
+      <div class="org-group-label">Organizzato da</div>
+      <div class="logos-grid">
+        <div class="logo-card">
+          <img src="img/logo_aido_bergamo.png" alt="AIDO Provinciale Bergamo" loading="lazy">
+        </div>
+        <div class="logo-card">
+          <img src="img/logo_aido_gorle.png" alt="AIDO Gruppo Comunale Gorle" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Patrocinio -->
+    <div class="org-group">
+      <div class="org-group-label">Con il patrocinio di</div>
+      <div class="logos-grid">
+        <div class="logo-card">
+          <img src="img/logo_comune_bergamo.png" alt="Comune di Bergamo" loading="lazy">
+        </div>
+        <div class="logo-card">
+          <img src="img/logo_comune_cavernago.png" alt="Comune di Cavernago" loading="lazy">
+        </div>
+        <div class="logo-card">
+          <img src="img/logo_provincia_bergamo.png" alt="Provincia di Bergamo" loading="lazy">
+        </div>
+        <div class="logo-card">
+          <img src="img/logo_regione_lombardia.png" alt="Regione Lombardia" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    Torneo di Calcetto a 5 su Erba &bull; 7 Giugno 2026 &bull; Centro Sportivo di Cavernago (BG)<br>
+    📞 <a href="tel:035235326">035 235326</a> &nbsp;&bull;&nbsp;
+    🌐 <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">www.aidobergamo.it</a><br>
+    <span style="opacity:0.4;font-size:0.8rem">Un assist per la vita: scegli il sì. Il gioco più bello è donare.</span>
+  </p>
+</footer>
+
+</body>
+</html>
