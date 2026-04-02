@@ -348,8 +348,27 @@ footer a:hover{color:var(--oro)}
     <h2 class="section-title">Tutto quello che devi sapere</h2>
     <div class="grid-4">
       <div class="card">
-        <span class="icon">📅</span>
-        <h3>Data</h3>
+        <!-- Calendario dinamico -->
+        <span class="icon" style="font-size:0">
+          <span id="cal-widget" style="
+            display:inline-flex;flex-direction:column;align-items:center;
+            width:52px;border-radius:8px;overflow:hidden;
+            box-shadow:0 2px 8px rgba(0,0,0,0.4);font-style:normal;
+          ">
+            <span id="cal-month" style="
+              background:var(--rosso);color:#fff;width:100%;
+              font-family:'Barlow Condensed',sans-serif;font-weight:700;
+              font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+              padding:3px 0;text-align:center;
+            "></span>
+            <span id="cal-day" style="
+              background:#fff;color:#111;width:100%;
+              font-family:'Bebas Neue',sans-serif;font-size:1.8rem;
+              line-height:1.1;text-align:center;padding:2px 0 3px;
+            "></span>
+          </span>
+        </span>
+        <h3 style="margin-top:12px">Data di oggi</h3>
         <p class="big">7 GIU</p>
         <p>Domenica 2026</p>
       </div>
@@ -395,8 +414,29 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
+<!-- ── REGOLAMENTO BANNER ── -->
+<section class="section" style="padding-top:0;padding-bottom:0">
+  <div class="section-inner">
+    <div style="
+      background:linear-gradient(135deg,rgba(204,31,31,0.15),rgba(204,31,31,0.06));
+      border:1px solid rgba(204,31,31,0.3);
+      border-radius:12px;padding:32px 36px;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    ">
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px">Documentazione ufficiale</p>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--bianco);line-height:1;margin-bottom:6px">Leggi il regolamento</h3>
+        <p style="font-size:0.95rem;color:rgba(255,255,255,0.55)">Gironi, sanzioni, tesseramento, orari e tutto quello che c'è da sapere prima di giocare.</p>
+      </div>
+      <a href="regolamento.html" class="btn btn-red" style="white-space:nowrap;flex-shrink:0">
+        📋 Vai al regolamento
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── ISCRIZIONE ── -->
-<section class="section" style="padding-top:0">
+<section class="section" style="padding-top:40px;padding-bottom:0">
   <div class="section-inner">
     <p class="section-label">Iscrizioni</p>
     <h2 class="section-title">Come partecipare</h2>
@@ -544,5 +584,13 @@ footer a:hover{color:var(--oro)}
   </p>
 </footer>
 
+<script>
+  (function(){
+    var mesi = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
+    var oggi = new Date();
+    document.getElementById('cal-day').textContent   = oggi.getDate();
+    document.getElementById('cal-month').textContent = mesi[oggi.getMonth()];
+  })();
+</script>
 </body>
 </html>
