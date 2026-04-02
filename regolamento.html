@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regolamento – Torneo di Calcetto AIDO Bergamo 2026</title>
+<meta name="description" content="Regolamento ufficiale del Torneo di Calcetto a 5 su Erba AIDO Bergamo, 7 Giugno 2026 – Centro Sportivo di Cavernago.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosso:  #cc1f1f;
+  --oro:    #f0c030;
+  --verde:  #1a7a2e;
+  --verde-m:#23a03a;
+  --verde-l:#3dcc5a;
+  --bianco: #f8f8f2;
+  --scuro:  #071009;
+  --card-bg:rgba(255,255,255,0.04);
+  --card-border:rgba(255,255,255,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--scuro);color:var(--bianco);
+  overflow-x:hidden;line-height:1.7;
+}
+
+/* ── TOP BAR ── */
+.top-bar{
+  background:var(--rosso);padding:10px 24px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;
+}
+.top-bar a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+  border-bottom:1px solid rgba(255,255,255,0.35);padding-bottom:1px}
+.top-bar a:hover{border-color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,0.025) 0,rgba(255,255,255,0.025) 30px,transparent 30px,transparent 60px),
+    linear-gradient(160deg,#040d05 0%,#0c2210 60%,#071009 100%);
+  padding:70px 24px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'📋';font-size:320px;opacity:0.025;
+  position:absolute;right:-60px;top:-40px;filter:blur(2px);
+  animation:slowSpin 60s linear infinite;
+}
+@keyframes slowSpin{to{transform:rotate(360deg)}}
+
+.hero-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--verde-l);margin-bottom:16px;
+}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,10vw,8rem);
+  line-height:0.9;color:var(--bianco);margin-bottom:20px;
+}
+.hero h1 span{color:var(--rosso)}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,0.6);
+  max-width:560px;margin:0 auto 32px;font-style:italic;
+}
+.hero-meta{
+  display:inline-flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:100px;padding:12px 28px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.95rem;letter-spacing:0.08em;color:var(--oro);
+}
+.hero-meta span{color:rgba(255,255,255,0.35)}
+
+/* ── NAVIGAZIONE ARTICOLI ── */
+.nav-articles{
+  background:rgba(255,255,255,0.03);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:16px 24px;position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(12px);
+}
+.nav-articles-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.nav-articles-inner span{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);margin-right:4px;
+}
+.nav-pill{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:100px;padding:5px 14px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.06em;color:rgba(255,255,255,0.6);
+  text-decoration:none;transition:background 0.15s,color 0.15s,border-color 0.15s;
+  white-space:nowrap;
+}
+.nav-pill:hover{
+  background:rgba(240,192,48,0.15);border-color:rgba(240,192,48,0.4);
+  color:var(--oro);
+}
+
+/* ── CONTENUTO ── */
+.content{max-width:900px;margin:0 auto;padding:60px 24px 80px;}
+
+/* Articolo */
+.articolo{
+  margin-bottom:20px;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  overflow:hidden;
+  transition:border-color 0.2s;
+}
+.articolo:hover{border-color:rgba(61,204,90,0.25)}
+
+.articolo-header{
+  display:flex;align-items:center;gap:0;
+  cursor:pointer;user-select:none;
+}
+.art-num{
+  background:var(--verde);
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  padding:18px 20px;
+  min-width:64px;
+  text-align:center;
+  line-height:1;
+  flex-shrink:0;
+}
+.art-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--bianco);padding:18px 20px;flex:1;
+}
+.art-arrow{
+  padding:18px 20px;color:rgba(255,255,255,0.4);
+  font-size:0.9rem;transition:transform 0.25s;
+  flex-shrink:0;
+}
+.articolo.open .art-arrow{transform:rotate(180deg)}
+
+.articolo-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+  border-top:0px solid rgba(255,255,255,0.07);
+}
+.articolo.open .articolo-body{
+  max-height:2000px;
+  border-top-width:1px;
+}
+
+.art-content{padding:20px 24px 24px;}
+.art-content p, .art-content li{
+  font-size:0.97rem;color:rgba(255,255,255,0.82);
+  line-height:1.75;margin-bottom:6px;
+}
+.art-content ul{list-style:none;padding:0}
+.art-content li{
+  padding-left:22px;position:relative;
+}
+.art-content li::before{
+  content:'▸';
+  position:absolute;left:4px;
+  color:var(--verde-l);font-size:0.75rem;top:4px;
+}
+.art-content li b, .art-content p b{color:var(--oro)}
+
+/* Badge importanti */
+.badge{
+  display:inline-block;
+  background:rgba(204,31,31,0.18);
+  border:1px solid rgba(204,31,31,0.4);
+  color:#ff7070;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;margin-left:8px;vertical-align:middle;
+}
+.badge.verde{
+  background:rgba(35,160,58,0.18);border-color:rgba(35,160,58,0.4);color:var(--verde-l);
+}
+.badge.oro{
+  background:rgba(240,192,48,0.15);border-color:rgba(240,192,48,0.4);color:var(--oro);
+}
+
+/* Highlight box */
+.highlight{
+  background:linear-gradient(135deg,rgba(26,122,46,0.2),rgba(37,168,64,0.08));
+  border-left:3px solid var(--verde-m);
+  border-radius:0 8px 8px 0;
+  padding:14px 18px;margin:12px 0;
+  font-size:0.95rem;color:rgba(255,255,255,0.85);
+}
+.highlight.rosso{
+  background:linear-gradient(135deg,rgba(204,31,31,0.15),rgba(204,31,31,0.05));
+  border-left-color:var(--rosso);
+}
+.highlight.oro{
+  background:linear-gradient(135deg,rgba(240,192,48,0.15),rgba(240,192,48,0.05));
+  border-left-color:var(--oro);
+}
+
+/* Schema gironi */
+.schema-gironi{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;margin:16px 0;
+}
+.girone-box{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:14px;text-align:center;
+}
+.girone-box .girone-label{
+  font-family:'Bebas Neue',sans-serif;font-size:1.3rem;
+  color:var(--oro);display:block;margin-bottom:4px;
+}
+.girone-box p{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.5}
+
+/* Tabella sanzioni */
+.sanzioni-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9rem}
+.sanzioni-table th{
+  background:var(--rosso);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+  padding:10px 14px;text-align:left;
+}
+.sanzioni-table td{
+  padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.8);
+}
+.sanzioni-table tr:last-child td{border-bottom:none}
+.sanzioni-table tr:nth-child(even) td{background:rgba(255,255,255,0.03)}
+.importo{color:var(--oro);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem}
+
+/* Download box */
+.download-box{
+  background:linear-gradient(135deg,rgba(26,122,46,0.2),rgba(37,168,64,0.08));
+  border:1px solid rgba(61,204,90,0.25);border-radius:12px;
+  padding:28px 32px;text-align:center;margin-bottom:40px;
+}
+.download-box p{font-size:0.95rem;color:rgba(255,255,255,0.6);margin-bottom:16px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:3px;border:none;cursor:pointer;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.btn-green{background:var(--verde-m);color:#fff}
+.btn-red{background:var(--rosso);color:#fff}
+
+/* ── FOOTER ── */
+footer{
+  background:#040a05;padding:28px 24px;text-align:center;
+  border-top:3px solid var(--rosso);
+}
+footer p{font-size:0.85rem;color:rgba(255,255,255,0.35);line-height:1.9}
+footer a{color:var(--verde-l);text-decoration:none}
+footer a:hover{color:var(--oro)}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>🔴 AIDO – Associazione Italiana Donatori di Organi</span>
+  <a href="index.html">← Torna alla home</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Torneo di Calcetto a 5 su Erba · AIDO Bergamo</p>
+  <h1>Rego<span>la</span>mento</h1>
+  <p class="hero-sub">Tutte le regole ufficiali del torneo. Leggile prima di scendere in campo.</p>
+  <div class="hero-meta">
+    <span>📅 7 Giugno 2026</span>
+    <span style="color:rgba(255,255,255,0.2)">|</span>
+    <span>📍 Cavernago (BG)</span>
+    <span style="color:rgba(255,255,255,0.2)">|</span>
+    <span>15 squadre · CSI Bergamo</span>
+  </div>
+</header>
+
+<!-- NAVIGAZIONE RAPIDA -->
+<nav class="nav-articles">
+  <div class="nav-articles-inner">
+    <span>Vai a:</span>
+    <a class="nav-pill" href="#art1">Sede</a>
+    <a class="nav-pill" href="#art2">Iscrizioni</a>
+    <a class="nav-pill" href="#art3">Età</a>
+    <a class="nav-pill" href="#art4">Tesseramento</a>
+    <a class="nav-pill" href="#art5">Date</a>
+    <a class="nav-pill" href="#art6">Durata gare</a>
+    <a class="nav-pill" href="#art7">Sanzioni</a>
+    <a class="nav-pill" href="#art8">Reclami</a>
+    <a class="nav-pill" href="#art10">Formula</a>
+    <a class="nav-pill" href="#art11">Presentazione</a>
+    <a class="nav-pill" href="#art14">Responsabilità</a>
+  </div>
+</nav>
+
+<!-- CONTENUTO -->
+<main class="content">
+
+  <!-- Art. 1 -->
+  <div class="articolo open" id="art1">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">1</div>
+      <div class="art-title">Sede del torneo</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="highlight">
+          Il torneo si svolge presso il <b>Centro Sportivo Comunale di Cavernago</b>,
+          Via G. Ungaretti 66 – "M.llo Luigi D'Andrea".
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 2 -->
+  <div class="articolo" id="art2">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">2</div>
+      <div class="art-title">Formula a gironi &amp; iscrizioni</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <ul>
+          <li>Le squadre iscritte sono <b>15 (quindici)</b>.</li>
+          <li>Quota di iscrizione: <b>€ 150 + € 50 cauzione</b> da versare prima della prima partita.</li>
+          <li>Il torneo è aperto a tutti i giocatori, <b>tesserati e non tesserati</b>.</li>
+          <li>Non è ammesso alcun <b>passaggio di giocatori tra squadre</b> dello stesso torneo, anche se eliminate.</li>
+          <li>Nella distinta di gioco potranno essere inseriti un <b>massimo di 18 giocatori</b>: 5 in campo + 13 in panchina con possibilità di sostituzione in qualsiasi momento.</li>
+          <li>Possono accedere al terreno di gioco non più di <b>3 dirigenti accompagnatori</b>.</li>
+        </ul>
+        <div class="highlight rosso" style="margin-top:14px">
+          ⚠️ La cauzione di <b>€ 50</b> sarà restituita a fine torneo, salvo eventuali ammende.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 3 -->
+  <div class="articolo" id="art3">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">3</div>
+      <div class="art-title">Età dei giocatori</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="highlight verde">
+          ✅ Possono partecipare al torneo <b>esclusivamente giocatori maggiorenni</b>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 4 -->
+  <div class="articolo" id="art4">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">4</div>
+      <div class="art-title">Tesseramento giocatori</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <ul>
+          <li>Ogni squadra può tesserare un <b>numero illimitato di giocatori</b>.</li>
+          <li>Ogni giocatore dovrà munirsi del <b>tesserino A.R.</b>, reperibile presso la segreteria del torneo.</li>
+          <li>Il costo dei <b>primi 10 cartellini è incluso nell'iscrizione</b>; dall'11° in poi: <b>€ 7 cadauno</b> (scalati dalla cauzione).</li>
+          <li>Il tesserino è valido solo se accompagnato da <b>documento d'identità valido</b>.</li>
+          <li>È richiesto il <b>certificato di idoneità alla pratica agonistica</b> non scaduto.</li>
+          <li>L'arbitro non ammetterà alla gara il giocatore privo anche di un solo requisito.</li>
+          <li>Ogni squadra può scendere in campo con un <b>minimo di 5 giocatori</b>.</li>
+          <li>Il tempo d'attesa per il ritardo della squadra avversaria è di <b>10 minuti</b>.</li>
+        </ul>
+        <div class="highlight rosso" style="margin-top:14px">
+          ⚠️ Presentarsi con <b>documento d'identità</b> e <b>certificato medico agonistico</b> in corso di validità. Senza questi documenti non si scende in campo.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 5 -->
+  <div class="articolo" id="art5">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">5</div>
+      <div class="art-title">Periodo e orari di svolgimento</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="highlight oro">
+          ⏰ <b>Inizio torneo: ore 9:00 — Fine torneo: entro le ore 19:00</b><br>
+          Prima gara: ore 9:00 a seguire
+        </div>
+        <ul style="margin-top:12px">
+          <li>In caso di <b>maltempo</b>, le squadre dovranno presentarsi regolarmente in campo.</li>
+          <li>Eventuali rinvii e date di recupero saranno stabiliti dall'organizzazione.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 6 -->
+  <div class="articolo" id="art6">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">6</div>
+      <div class="art-title">Durata delle gare</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <ul>
+          <li>Ogni gara: <b>un tempo unico da 20 minuti</b> + 1 time out per squadra.</li>
+          <li>Nelle <b>finali</b>, in caso di parità: 2 tempi supplementari da 5 minuti.</li>
+          <li>In caso di ulteriore parità: <b>5 calci di rigore</b>, poi rigori ad oltranza.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 7 -->
+  <div class="articolo" id="art7">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">7</div>
+      <div class="art-title">Sanzioni disciplinari <span class="badge">Importante</span></div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <p style="margin-bottom:16px">Le sanzioni sono di competenza del <b>Giudice Sportivo del C.S.I. di Bergamo</b>.</p>
+        <table class="sanzioni-table">
+          <thead>
+            <tr>
+              <th>Infrazione</th>
+              <th>Conseguenza</th>
+              <th>Ammenda</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ammonizione</td>
+              <td>Squalifica a 3 ammonizioni cumulate</td>
+              <td><span class="importo">€ 5</span> cadauna</td>
+            </tr>
+            <tr>
+              <td>Espulsione</td>
+              <td>Squalifica automatica minimo 1 giornata</td>
+              <td><span class="importo">€ 10</span></td>
+            </tr>
+            <tr>
+              <td>Ritardo inizio partita</td>
+              <td>Tolleranza massima: 10 minuti</td>
+              <td><span class="importo">€ 30</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="highlight" style="margin-top:12px">
+          💡 <b>Dalle semifinali:</b> le ammonizioni vengono azzerate, ma le espulsioni rimangono valide.
+        </div>
+        <p style="margin-top:12px;font-size:0.88rem;color:rgba(255,255,255,0.5)">
+          I giocatori squalificati non potranno entrare sul terreno di gioco nel periodo della squalifica.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 8 & 9 -->
+  <div class="articolo" id="art8">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">8–9</div>
+      <div class="art-title">Reclami e modalità di presentazione</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <ul>
+          <li>Non sono ammessi <b>reclami di ordine tecnico</b>.</li>
+          <li>Per infrazioni regolamentari: reclamo al <b>C.T.P. Calcio del C.S.I. di Bergamo</b> entro <b>24 ore</b> dalla gara.</li>
+          <li>Tassa reclamo: <b>€ 50,00</b>.</li>
+        </ul>
+        <div class="highlight rosso" style="margin-top:12px">
+          Il reclamo va redatto in <b>triplice copia</b>:<br>
+          1ª copia → C.T.P. Calcio CSI Bergamo (raccomandata a.r.)<br>
+          2ª copia → squadra avversaria (raccomandata a.r.)<br>
+          3ª copia → società organizzatrice
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 10 -->
+  <div class="articolo" id="art10">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">10</div>
+      <div class="art-title">Formula di svolgimento</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="schema-gironi">
+          <div class="girone-box">
+            <span class="girone-label">Girone A</span>
+            <p>5 squadre<br>gironi all'italiana<br>sola andata</p>
+          </div>
+          <div class="girone-box">
+            <span class="girone-label">Girone B</span>
+            <p>5 squadre<br>gironi all'italiana<br>sola andata</p>
+          </div>
+          <div class="girone-box">
+            <span class="girone-label">Girone C</span>
+            <p>5 squadre<br>gironi all'italiana<br>sola andata</p>
+          </div>
+        </div>
+        <ul style="margin-top:12px">
+          <li>Accedono alla fase successiva: <b>le 3 prime classificate + la miglior seconda</b>.</li>
+          <li>La miglior seconda si scontra con <b>la prima del girone successivo al suo</b>.</li>
+          <li>Semifinali → Finale 3°/4° posto + <b>Finale 1°/2° posto</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 11 -->
+  <div class="articolo" id="art11">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">11</div>
+      <div class="art-title">Mancata presentazione <span class="badge">Attenzione</span></div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="highlight rosso">
+          ❌ In caso di <b>mancata presentazione</b>: la squadra è esclusa automaticamente,
+          tutti i risultati vengono azzerati (sconfitta a tavolino 3–0 per le avversarie)
+          e viene comminata una <b>multa di € 50</b>.
+        </div>
+        <p style="margin-top:10px;font-size:0.92rem;color:rgba(255,255,255,0.7)">
+          Nelle fasi finali, la squadra assente viene eliminata con promozione
+          al turno successivo della squadra sfidante. Multa di <b>€ 50</b> anche in questo caso.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 12 -->
+  <div class="articolo" id="art12">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">12</div>
+      <div class="art-title">Premio gesto sportivo <span class="badge oro">Speciale</span></div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <div class="highlight oro">
+          🏅 Verrà assegnato un <b>premio speciale al miglior gesto sportivo del torneo</b>,
+          a giudizio insindacabile degli organizzatori.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 13 -->
+  <div class="articolo" id="art13">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">13</div>
+      <div class="art-title">Norme finali</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <p>Per quanto non contemplato dal presente regolamento, si fa riferimento ai <b>regolamenti del C.S.I. di Bergamo</b>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art. 14 -->
+  <div class="articolo" id="art14">
+    <div class="articolo-header" onclick="toggle(this)">
+      <div class="art-num">14</div>
+      <div class="art-title">Responsabilità</div>
+      <div class="art-arrow">▼</div>
+    </div>
+    <div class="articolo-body">
+      <div class="art-content">
+        <p>La società organizzatrice declina ogni responsabilità per danni a persone o cose nell'ambito della manifestazione, <b>salvo quanto previsto dalla parte assicurativa della tessera A.R.</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;margin-top:56px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html" class="btn btn-green">← Torna alla home</a>
+    <a href="tel:035235326" class="btn btn-red">📞 Info: 035 235326</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    Torneo di Calcetto a 5 su Erba &bull; 7 Giugno 2026 &bull; Centro Sportivo di Cavernago (BG)<br>
+    📞 <a href="tel:035235326">035 235326</a> &nbsp;&bull;&nbsp;
+    🌐 <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">www.aidobergamo.it</a><br>
+    <span style="opacity:0.4;font-size:0.8rem">Un assist per la vita: scegli il sì. Il gioco più bello è donare.</span>
+  </p>
+</footer>
+
+<script>
+function toggle(header) {
+  var art = header.parentElement;
+  art.classList.toggle('open');
+}
+// Apri l'articolo se si naviga direttamente all'ancora
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = window.location.hash;
+  if (hash) {
+    var el = document.querySelector(hash);
+    if (el) { el.classList.add('open'); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  }
+});
+</script>
+</body>
+</html>
