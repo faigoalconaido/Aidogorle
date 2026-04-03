@@ -10,25 +10,35 @@
 <meta property="og:image" content="img/volantino.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
 
 <style>
 /* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --red:    #e0001a;
-  --red2:   #b50016;
-  --gold:   #f5c518;
+  /* Originali */
+  --rosso:   #cc1f1f;
+  --rosso-d: #9e1515;
+  --oro:     #f0c030;
+  --verde:   #1a7a2e;
+  --verde-m: #23a03a;
+  --verde-l: #3dcc5a;
+  --bianco:  #f8f8f2;
+  --scuro:   #071009;
+  /* Alias usati nelle sezioni sotto */
+  --red:    #cc1f1f;
+  --red2:   #9e1515;
+  --gold:   #f0c030;
   --silver: #c0c0c0;
-  --dark:   #0a0f0a;
-  --dark2:  #111911;
-  --dark3:  #1a2419;
-  --green:  #1e5c1e;
-  --green2: #2a7a2a;
-  --text:   #e8ede8;
-  --muted:  rgba(232,237,232,0.55);
-  --card:   rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.1);
+  --dark:   #071009;
+  --dark2:  #0c1a0c;
+  --dark3:  #112011;
+  --green:  #1a7a2e;
+  --green2: #23a03a;
+  --text:   #f8f8f2;
+  --muted:  rgba(248,248,242,0.55);
+  --card:   rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
 }
 html { scroll-behavior: smooth; }
 body {
@@ -41,12 +51,105 @@ body {
     transparent 120px
   );
   color: var(--text);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Barlow', sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ─── STICKY TOP BAR ─── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,15,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 24px;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+.topbar.visible { transform: translateY(0); }
+.topbar-title { font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 0.05em; color: var(--text); }
+.topbar-cta {
+  background: var(--red); color: #fff;
+  font-family: 'Oswald', sans-serif; font-size: 0.9rem;
+  padding: 7px 18px; border-radius: 4px;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+}
+.topbar-cta:hover { background: var(--red2); }
+
+/* ── TOP BAR ── */
+.top-bar{
+  background:var(--rosso);
+  padding:10px 24px;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.92rem;letter-spacing:0.15em;text-transform:uppercase;color:#fff;
+}
+.top-bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4)}
+.top-bar a:hover{border-color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,0.025) 0px,rgba(255,255,255,0.025) 30px,transparent 30px,transparent 60px),
+    linear-gradient(160deg,#040d05 0%,#0c2210 50%,#071009 100%);
+  padding:60px 24px 0;overflow:hidden;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-cta{justify-content:center!important}
+}
+.hero-memory{font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.5);margin-bottom:6px;animation:fadeUp 0.7s ease both}
+.hero-names{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(0.95rem,2vw,1.2rem);color:var(--oro);letter-spacing:0.06em;
+  margin-bottom:24px;line-height:1.7;animation:fadeUp 0.8s ease both;
+}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,7.5rem);line-height:0.88;animation:fadeUp 0.9s ease both}
+.hero-title .t1{color:var(--bianco)}
+.hero-title .t2{color:var(--verde-l)}
+.hero-title .t3{color:var(--oro)}
+.hero-tagline{
+  margin-top:28px;border-left:4px solid var(--rosso);padding-left:16px;
+  font-style:italic;font-size:clamp(1rem,2vw,1.25rem);
+  color:rgba(255,255,255,0.75);line-height:1.6;animation:fadeUp 1s ease both;
+}
+.hero-tagline strong{color:var(--bianco)}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp 1.1s ease both}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:3px;border:none;cursor:pointer;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.btn-red{background:var(--rosso);color:#fff}
+.btn-gold{background:var(--oro);color:var(--scuro)}
+.hero-flyer{position:relative;animation:fadeUp 0.9s ease both}
+.flyer-img{
+  width:100%;max-width:460px;border-radius:8px;display:block;margin:0 auto;
+  box-shadow:0 24px 80px rgba(0,0,0,0.7),0 0 0 3px rgba(240,192,48,0.35);
+}
+@media(max-width:850px){.flyer-img{max-width:320px}}
+.date-strip{
+  background:var(--rosso);margin-top:60px;padding:22px 40px;
+  display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;
+}
+.date-strip .d{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3.8rem);color:#fff;line-height:1}
+.date-strip .sep{color:rgba(255,255,255,0.3);font-size:2rem}
+.date-strip .loc{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(0.95rem,2.5vw,1.4rem);color:var(--oro);
+  letter-spacing:0.1em;text-transform:uppercase;
+}
 
 /* ─── STICKY TOP BAR ─── */
 .topbar {
@@ -136,7 +239,7 @@ img { max-width: 100%; display: block; }
   animation: fadeDown 0.7s 0.1s ease both;
 }
 .hero-names {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: 700;
   font-size: clamp(0.9rem, 1.8vw, 1.05rem);
   color: var(--gold);
@@ -285,7 +388,7 @@ img { max-width: 100%; display: block; }
 }
 .countdown-num.flash { color: var(--gold); }
 .countdown-unit {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 0.7rem; letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -760,69 +863,49 @@ footer a:hover { color: #fff; }
   <a href="tel:035235326" class="topbar-cta">📞 Iscriviti</a>
 </div>
 
-<!-- ─── HERO ─── -->
+<!-- TOP BAR -->
+<div class="top-bar">
+  🔴 AIDO – Associazione Italiana Donatori di Organi &nbsp;|&nbsp;
+  <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">aidobergamo.it</a>
+</div>
+
+<!-- ── HERO ── -->
 <header class="hero" id="hero">
-  <div class="hero-bg"></div>
-
-  <!-- Barra top rossa -->
-  <div class="hero-topbar">
-    🔴 AIDO – Associazione Italiana Donatori di Organi &nbsp;|&nbsp;
-    <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">aidobergamo.it</a>
-  </div>
-
-  <!-- Due colonne: testo + volantino -->
   <div class="hero-inner">
-
-    <!-- Colonna sinistra -->
-    <div class="hero-left">
+    <div class="hero-text">
       <p class="hero-memory">in ricordo di</p>
-      <div class="hero-names">
-        <span>Giorgio Brignoli</span>
-        <span>Alberto Ravanelli</span>
-        <span>Cristina Bonassi</span>
-      </div>
-
+      <p class="hero-names">
+        Giorgio Brignoli<br>
+        Alberto Ravanelli<br>
+        Cristina Bonassi
+      </p>
       <h1 class="hero-title">
-        <span class="line1">Torneo di</span>
-        <span class="line2">Calcetto</span>
-        <span class="line3">a 5 su Erba</span>
+        <span class="t1">Torneo di</span><br>
+        <span class="t2">Calcetto</span><br>
+        <span class="t3">a 5 su Erba</span>
       </h1>
-
-      <div class="hero-slogan">
-        <p>Un assist per la vita: scegli il sì.<br><strong>Il gioco più bello è donare.</strong></p>
+      <div class="hero-tagline">
+        <em>Un assist per la vita: scegli il sì.</em><br>
+        <strong>Il gioco più bello è donare.</strong>
       </div>
-
-      <div class="cta-row">
-        <a href="tel:035235326" class="btn btn-primary">📞 035 235326</a>
-        <a href="https://www.aidobergamo.it" target="_blank" rel="noopener" class="btn btn-secondary">🌐 aidobergamo.it</a>
+      <div class="hero-cta">
+        <a href="tel:035235326" class="btn btn-red">📞 035 235326</a>
+        <a href="https://www.aidobergamo.it" target="_blank" rel="noopener" class="btn btn-gold">🌐 aidobergamo.it</a>
       </div>
     </div>
-
-    <!-- Colonna destra: volantino -->
-    <div class="hero-right">
-      <img src="img/volantino.jpg" alt="Volantino Torneo di Calcetto AIDO Bergamo 7 Giugno 2026">
-    </div>
-
-  </div>
-
-  <!-- Striscia rossa info in basso -->
-  <div class="hero-strip">
-    <div class="hero-strip-item">
-      <span class="strip-icon">📅</span>
-      7 Giugno 2026
-    </div>
-    <div class="hero-strip-item">
-      <span class="strip-icon">📍</span>
-      Centro Sportivo di Cavernago (BG)
-    </div>
-    <div class="hero-strip-item">
-      <span class="strip-icon">⚽</span>
-      Calcetto a 5 su Erba
+    <div class="hero-flyer">
+      <img class="flyer-img" src="img/volantino.jpg" alt="Volantino Torneo di Calcetto AIDO Bergamo 7 Giugno 2026">
     </div>
   </div>
 
+  <div class="date-strip">
+    <span class="d">7 Giugno 2026</span>
+    <span class="sep">|</span>
+    <span class="loc">📍 Centro Sportivo di Cavernago (BG)</span>
+    <span class="sep">|</span>
+    <span class="loc">⚽ Calcetto a 5 su erba</span>
+  </div>
 </header>
-
 <!-- ─── COUNTDOWN ─── -->
 <div class="countdown-section">
   <p class="countdown-label">🏆 Conto alla rovescia – 7 Giugno 2026</p>
