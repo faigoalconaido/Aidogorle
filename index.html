@@ -72,162 +72,153 @@ img { max-width: 100%; display: block; }
 
 /* ─── HERO ─── */
 .hero {
-  min-height: 100vh;
   position: relative;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
-  padding: 100px 24px 80px;
   overflow: hidden;
 }
 
-/* Grass field animated background */
+/* Top badge bar */
+.hero-topbar {
+  background: var(--red);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 9px 24px;
+  position: relative; z-index: 1;
+  animation: fadeDown 0.6s ease both;
+}
+.hero-topbar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Grass animated background */
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
     repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px,
-      transparent 1px, transparent 80px
-    ),
-    repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px,
-      transparent 1px, transparent 80px
+      rgba(40,100,40,0.13) 0px, rgba(40,100,40,0.13) 60px,
+      transparent 60px, transparent 120px
     ),
-    radial-gradient(ellipse at 50% 60%, #1a3d1a 0%, #0a1a0a 60%, #050a05 100%);
+    radial-gradient(ellipse at 40% 60%, #1a3d1a 0%, #0d200d 55%, #070f07 100%);
   animation: grassShift 20s ease-in-out infinite alternate;
 }
 @keyframes grassShift {
-  0%   { background-position: 0 0, 0 0, center; filter: brightness(0.9); }
-  100% { background-position: 40px 40px, 40px 40px, center; filter: brightness(1.1); }
+  0%   { filter: brightness(0.92); }
+  100% { filter: brightness(1.08); }
 }
 
-/* Animated light stripes (campo illuminato) */
-.hero-bg::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(40,100,40,0.18) 0px,
-    rgba(40,100,40,0.18) 60px,
-    transparent 60px,
-    transparent 120px
-  );
-  animation: stripePulse 8s ease-in-out infinite alternate;
+/* Two-column content */
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px 48px;
 }
-@keyframes stripePulse {
-  0%   { opacity: 0.5; transform: scaleY(1); }
-  100% { opacity: 1;   transform: scaleY(1.02); }
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 40px 24px 36px; }
+  .hero-right { display: none; }
 }
 
-/* Spotlight effect */
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 50% 40%,
-    rgba(255,255,255,0.06) 0%,
-    transparent 70%
-  );
-}
-
-/* Centre circle decoration */
-.hero-circle {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(420px, 90vw); height: min(420px, 90vw);
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.06);
-  pointer-events: none;
-  animation: circlePulse 6s ease-in-out infinite;
-}
-.hero-circle::after {
-  content: '';
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-}
-@keyframes circlePulse {
-  0%, 100% { border-color: rgba(255,255,255,0.06); }
-  50%       { border-color: rgba(255,255,255,0.14); }
-}
-
-.hero > * { position: relative; z-index: 1; }
-
-.aido-badge {
-  display: inline-block;
-  background: var(--red);
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 2px;
-  margin-bottom: 28px;
-  animation: fadeDown 0.8s ease both;
-}
+/* Left column */
+.hero-left { text-align: left; }
 
 .hero-memory {
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 6px;
-  animation: fadeDown 0.9s 0.1s ease both;
+  margin-bottom: 4px;
+  animation: fadeDown 0.7s 0.1s ease both;
 }
 .hero-names {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-  color: rgba(232,237,232,0.7);
-  letter-spacing: 0.06em;
-  margin-bottom: 28px;
-  animation: fadeDown 1s 0.2s ease both;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--gold);
+  margin-bottom: 24px;
+  line-height: 1.8;
+  animation: fadeDown 0.8s 0.15s ease both;
 }
+.hero-names span { display: block; }
 
 .hero-title {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 0.92;
   text-transform: uppercase;
   margin-bottom: 28px;
-  animation: fadeDown 1s 0.3s ease both;
+  animation: fadeDown 0.9s 0.2s ease both;
 }
-.hero-title .line1 { display: block; font-size: clamp(1.8rem, 5vw, 3rem); color: rgba(232,237,232,0.8); }
+.hero-title .line1 {
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  color: #fff;
+}
 .hero-title .line2 {
   display: block;
-  font-size: clamp(4rem, 14vw, 9rem);
-  color: #fff;
-  text-shadow: 0 0 60px rgba(40,180,40,0.3), 0 4px 24px rgba(0,0,0,0.8);
-  letter-spacing: -0.02em;
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  color: #4dcc4d;
+  text-shadow: 0 0 40px rgba(60,200,60,0.35);
+  letter-spacing: -0.01em;
 }
-.hero-title .line3 { display: block; font-size: clamp(1.4rem, 4vw, 2.6rem); color: rgba(232,237,232,0.8); }
-
-.hero-date-wrap {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
-  margin-bottom: 20px;
-  animation: fadeDown 1s 0.4s ease both;
-}
-.hero-date {
-  font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em;
+.hero-title .line3 {
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
   color: var(--gold);
-}
-.hero-location {
-  font-size: 1rem; color: var(--muted);
-  background: rgba(255,255,255,0.07); border-radius: 3px; padding: 4px 12px;
 }
 
 .hero-slogan {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  color: rgba(232,237,232,0.7);
-  margin-bottom: 36px;
-  animation: fadeDown 1s 0.45s ease both;
+  border-left: 3px solid var(--red);
+  padding-left: 14px;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(232,237,232,0.75);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  animation: fadeDown 1s 0.3s ease both;
 }
 .hero-slogan strong { color: #fff; }
+
+/* Right column – volantino */
+.hero-right {
+  animation: fadeDown 1s 0.25s ease both;
+}
+.hero-right img {
+  width: 100%; max-width: 460px;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  margin: 0 auto;
+}
+
+/* Bottom red info strip */
+.hero-strip {
+  position: relative; z-index: 1;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.hero-strip-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 32px;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  border-right: 1px solid rgba(255,255,255,0.25);
+}
+.hero-strip-item:last-child { border-right: none; }
+.hero-strip-item .strip-icon { font-size: 1.2rem; color: var(--gold); }
+@media (max-width: 640px) {
+  .hero-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); width: 100%; justify-content: center; padding: 12px 16px; }
+  .hero-strip-item:last-child { border-bottom: none; }
+}
 
 .cta-row {
   display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
@@ -253,18 +244,6 @@ img { max-width: 100%; display: block; }
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
 
-/* Scroll indicator */
-.hero-scroll {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-  z-index: 1;
-  animation: bounce 2s ease-in-out infinite;
-  opacity: 0.4;
-  font-size: 1.6rem;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(8px); }
-}
 
 /* Fade animations */
 @keyframes fadeDown {
@@ -402,13 +381,6 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .prize-card.silver .amount { color: var(--silver); }
 .prize-card .desc { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
 
-/* ─── VOLANTINO ─── */
-.volantino-section { padding: 0 24px 64px; max-width: 960px; margin: 0 auto; text-align: center; }
-.volantino-section img {
-  border-radius: 12px; border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  max-width: 520px; margin: 0 auto;
-}
 
 /* ─── REGOLAMENTO BANNER ─── */
 .reg-banner {
@@ -792,32 +764,63 @@ footer a:hover { color: #fff; }
 <header class="hero" id="hero">
   <div class="hero-bg"></div>
 
-  <div class="aido-badge">🔴 AIDO – Associazione Italiana Donatori di Organi | aidobergamo.it</div>
-
-  <p class="hero-memory">in ricordo di</p>
-  <p class="hero-names">Giorgio Brignoli &nbsp;·&nbsp; Alberto Ravanelli &nbsp;·&nbsp; Cristina Bonassi</p>
-
-  <h1 class="hero-title">
-    <span class="line1">Torneo di</span>
-    <span class="line2">Calcetto</span>
-    <span class="line3">a 5 su Erba</span>
-  </h1>
-
-  <div class="hero-date-wrap">
-    <span class="hero-date">7 Giugno 2026</span>
-    <span class="hero-location">📍 Centro Sportivo di Cavernago (BG)</span>
+  <!-- Barra top rossa -->
+  <div class="hero-topbar">
+    🔴 AIDO – Associazione Italiana Donatori di Organi &nbsp;|&nbsp;
+    <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">aidobergamo.it</a>
   </div>
 
-  <div class="hero-slogan">
-    <p>Un assist per la vita: scegli il sì.<br><strong>Il gioco più bello è donare.</strong></p>
+  <!-- Due colonne: testo + volantino -->
+  <div class="hero-inner">
+
+    <!-- Colonna sinistra -->
+    <div class="hero-left">
+      <p class="hero-memory">in ricordo di</p>
+      <div class="hero-names">
+        <span>Giorgio Brignoli</span>
+        <span>Alberto Ravanelli</span>
+        <span>Cristina Bonassi</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line1">Torneo di</span>
+        <span class="line2">Calcetto</span>
+        <span class="line3">a 5 su Erba</span>
+      </h1>
+
+      <div class="hero-slogan">
+        <p>Un assist per la vita: scegli il sì.<br><strong>Il gioco più bello è donare.</strong></p>
+      </div>
+
+      <div class="cta-row">
+        <a href="tel:035235326" class="btn btn-primary">📞 035 235326</a>
+        <a href="https://www.aidobergamo.it" target="_blank" rel="noopener" class="btn btn-secondary">🌐 aidobergamo.it</a>
+      </div>
+    </div>
+
+    <!-- Colonna destra: volantino -->
+    <div class="hero-right">
+      <img src="img/volantino.jpg" alt="Volantino Torneo di Calcetto AIDO Bergamo 7 Giugno 2026">
+    </div>
+
   </div>
 
-  <div class="cta-row">
-    <a href="tel:035235326" class="btn btn-primary">📞 035 235326</a>
-    <a href="https://www.aidobergamo.it" target="_blank" rel="noopener" class="btn btn-secondary">🌐 Iscriviti Online</a>
+  <!-- Striscia rossa info in basso -->
+  <div class="hero-strip">
+    <div class="hero-strip-item">
+      <span class="strip-icon">📅</span>
+      7 Giugno 2026
+    </div>
+    <div class="hero-strip-item">
+      <span class="strip-icon">📍</span>
+      Centro Sportivo di Cavernago (BG)
+    </div>
+    <div class="hero-strip-item">
+      <span class="strip-icon">⚽</span>
+      Calcetto a 5 su Erba
+    </div>
   </div>
 
-  <div class="hero-scroll">⌄</div>
 </header>
 
 <!-- ─── COUNTDOWN ─── -->
@@ -877,11 +880,6 @@ footer a:hover { color: #fff; }
     </div>
   </div>
 </section>
-
-<!-- ─── VOLANTINO ─── -->
-<div class="volantino-section">
-  <img src="img/volantino.jpg" alt="Volantino Torneo di Calcetto AIDO Bergamo 7 Giugno 2026" loading="lazy">
-</div>
 
 <!-- ─── PREMI ─── -->
 <section id="premi">
