@@ -791,7 +791,6 @@ footer a:hover { color: #fff; }
 <!-- ─── HERO ─── -->
 <header class="hero" id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-circle"></div>
 
   <div class="aido-badge">🔴 AIDO – Associazione Italiana Donatori di Organi | aidobergamo.it</div>
 
@@ -856,9 +855,9 @@ footer a:hover { color: #fff; }
   <div class="info-grid">
     <div class="info-card">
       <span class="icon">📅</span>
-      <h3>Data</h3>
-      <p class="big">7 GIU</p>
-      <p>Domenica 2026</p>
+      <h3>Data di oggi</h3>
+      <p class="big" id="oggi-giorno">--</p>
+      <p id="oggi-mese">--</p>
     </div>
     <div class="info-card">
       <span class="icon">📍</span>
@@ -1243,6 +1242,17 @@ footer a:hover { color: #fff; }
 </div>
 
 <script>
+/* ── DATA OGGI ── */
+(function(){
+  var MESI = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
+  var GIORNI = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+  var d = new Date();
+  var gg = document.getElementById('oggi-giorno');
+  var mm = document.getElementById('oggi-mese');
+  if(gg) gg.textContent = d.getDate() + ' ' + MESI[d.getMonth()];
+  if(mm) mm.textContent = GIORNI[d.getDay()] + ' ' + d.getFullYear();
+})();
+
 /* ── COUNTDOWN ── */
 function updateCountdown() {
   const target = new Date('2026-06-07T08:00:00');
