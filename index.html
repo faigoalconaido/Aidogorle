@@ -655,18 +655,15 @@ footer a:hover{color:var(--oro)}
 
 /* ─── SECTION ─── */
 section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
-.section-label {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.7rem; letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red); margin-bottom: 8px;
+.section-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--verde-l);margin-bottom:10px;
 }
-.section-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  font-weight: 600; letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #fff; margin-bottom: 40px;
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);line-height:1;
+  color:var(--bianco);margin-bottom:40px;
 }
 
 /* ─── INFO GRID ─── */
@@ -675,23 +672,23 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
-.info-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 28px 20px;
-  text-align: center;
-  transition: transform 0.25s, border-color 0.25s;
+.info-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-top:3px solid var(--verde-m);
+  border-radius:8px;padding:26px 22px;
+  text-align:center;
+  transition:background 0.2s,border-color 0.2s;
 }
-.info-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); }
-.info-card .icon { font-size: 2rem; display: block; margin-bottom: 12px; }
-.info-card h3 {
-  font-family: 'Oswald', sans-serif; font-size: 0.75rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 10px;
+.info-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(61,204,90,0.35)}
+.info-card .icon{font-size:2rem;margin-bottom:12px;display:block}
+.info-card h3{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--verde-l);margin-bottom:6px;
 }
-.info-card .big { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; }
-.info-card p { font-size: 0.95rem; color: rgba(232,237,232,0.75); line-height: 1.5; }
+.info-card .big{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--oro);line-height:1}
+.info-card p{font-size:1rem;color:var(--bianco);line-height:1.5}
 
 /* ─── PREMI ─── */
 .prizes-wrap { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
@@ -825,11 +822,8 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 }
 .att-card:hover { transform: translateY(-5px); border-color: rgba(30,92,30,0.6); }
 .att-card .icon { font-size: 2.2rem; display: block; margin-bottom: 14px; }
-.att-card h3 {
-  font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 0.06em;
-  text-transform: uppercase; color: #fff; margin-bottom: 8px;
-}
-.att-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+.att-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--bianco);margin-bottom:6px}
+.att-card p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.5}
 
 /* ─── MAPPA ─── */
 .mappa-section {
@@ -852,39 +846,28 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
   line-height: 1.7; margin-bottom: 24px;
 }
 .mappa-addr strong { color: #fff; display: block; margin-bottom: 4px; }
-.maps-btn {
-  display: flex; align-items: center; gap: 8px;
-  padding: 12px 18px; border-radius: 6px;
-  font-size: 0.9rem; margin-bottom: 10px;
-  transition: all 0.2s; width: fit-content;
+.maps-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;padding:15px 24px;border-radius:4px;
+  transition:transform 0.15s,background 0.15s;margin-bottom:12px;
 }
-.maps-gmaps { background: rgba(66,133,244,0.15); border: 1px solid rgba(66,133,244,0.3); color: #7ab4f5; }
-.maps-gmaps:hover { background: rgba(66,133,244,0.25); }
-.maps-apple { background: rgba(255,255,255,0.07); border: 1px solid var(--border); color: var(--text); }
-.maps-apple:hover { background: rgba(255,255,255,0.13); }
-.map-frame {
-  border-radius: 12px; overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-}
-.map-frame iframe {
-  width: 100%; height: 420px; border: none; display: block;
-}
+.maps-btn:hover{transform:translateY(-2px)}
+.maps-gmaps{background:var(--verde-m);color:#fff}
+.maps-gmaps:hover{background:#1b8a30}
+.maps-apple{background:rgba(255,255,255,0.07);color:var(--bianco);border:1px solid rgba(255,255,255,0.12)}
+.maps-apple:hover{background:rgba(255,255,255,0.13)}
+.map-frame{border-radius:10px;overflow:hidden;border:2px solid rgba(61,204,90,0.22);aspect-ratio:4/3}
+.map-frame iframe{width:100%;height:100%;border:0;display:block}
 
 /* ─── LOTTERIA BANNER ─── */
-.lottery {
-  background: linear-gradient(90deg, var(--dark3), var(--green), var(--dark3));
-  border-top: 1px solid rgba(30,92,30,0.4);
-  border-bottom: 1px solid rgba(30,92,30,0.4);
-  text-align: center; padding: 20px 24px;
-  font-family: 'Oswald', sans-serif; font-size: clamp(1rem, 3vw, 1.3rem);
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: #fff;
-  animation: lotteryPulse 4s ease-in-out infinite;
-}
-@keyframes lotteryPulse {
-  0%, 100% { background: linear-gradient(90deg, var(--dark3), var(--green), var(--dark3)); }
-  50%       { background: linear-gradient(90deg, var(--dark3), #2d8a2d, var(--dark3)); }
+.lottery{
+  background:linear-gradient(90deg,var(--verde),#1a5c20,var(--verde));
+  padding:22px;text-align:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.4rem,4vw,2.3rem);letter-spacing:0.18em;color:var(--oro);
+  border-top:3px solid var(--oro);border-bottom:3px solid var(--oro);
 }
 
 /* ─── GALLERIA EDIZIONE PRECEDENTE ─── */
@@ -1038,45 +1021,65 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .share-copy:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
 .share-copy.copied { background: rgba(30,92,30,0.3); border-color: rgba(30,92,30,0.6); color: #7cff7c; }
 
-/* ─── ORG SECTION ─── */
-.org-section {
-  padding: 72px 24px;
-  max-width: 960px; margin: 0 auto;
+.org-section{
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,0.02) 0,rgba(255,255,255,0.02) 30px,transparent 30px,transparent 60px),
+    linear-gradient(160deg,#040d05,#0c2210);
+  padding:80px 24px;
 }
-.org-title {
-  font-family: 'Oswald', sans-serif; font-size: 1.4rem;
-  text-transform: uppercase; color: var(--muted);
-  letter-spacing: 0.05em; margin-bottom: 40px;
-  text-align: center;
+.org-inner{max-width:1100px;margin:0 auto}
+.org-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:var(--bianco);text-align:center;margin-bottom:50px;
+  position:relative;
 }
-.org-group { margin-bottom: 36px; }
-.org-group-label {
-  font-family: 'Oswald', sans-serif; font-size: 0.72rem;
-  letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 16px; text-align: center;
+.org-title::after{
+  content:'';display:block;width:80px;height:3px;
+  background:linear-gradient(90deg,var(--rosso),var(--oro));
+  margin:12px auto 0;border-radius:2px;
+}
+.org-group{margin-bottom:56px}
+.org-group-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.78rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);text-align:center;margin-bottom:28px;
+  display:flex;align-items:center;gap:16px;
+}
+.org-group-label::before,
+.org-group-label::after{
+  content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);
 }
 .logos-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; }
-.logo-card {
-  background: #fff; border-radius: 8px;
-  padding: 12px 18px;
-  display: flex; align-items: center; justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+.logo-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;padding:16px;
+  display:flex;flex-direction:column;align-items:center;
+  width:200px;
+  transition:transform 0.2s,border-color 0.2s,background 0.2s;
+  overflow:hidden;
 }
-.logo-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-.big-logos .logo-card img { height: 56px; width: auto; }
-.org-group:not(.big-logos) .logo-card img { height: 42px; width: auto; }
+.logo-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(240,192,48,0.4);
+  background:rgba(255,255,255,0.09);
+}
+.logo-card img{
+  width:100%;height:160px;
+  object-fit:contain;border-radius:8px;display:block;
+}
+.org-group.big-logos .logo-card{width:220px}
+.org-group.big-logos .logo-card img{height:180px}
 
 /* ─── FOOTER ─── */
-footer {
-  background: var(--dark2);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  padding: 36px 24px 24px;
-  font-size: 0.88rem; color: var(--muted);
-  line-height: 2;
+footer{
+  background:#040a05;padding:30px 24px;text-align:center;
+  border-top:3px solid var(--rosso);
 }
-footer a { color: rgba(232,237,232,0.7); transition: color 0.2s; }
-footer a:hover { color: #fff; }
+footer p{font-size:0.85rem;color:rgba(255,255,255,0.35);line-height:1.9}
+footer a{color:var(--verde-l);text-decoration:none}
+footer a:hover{color:var(--oro)}
 
 /* ─── STICKY MOBILE CTA ─── */
 .mobile-cta {
@@ -1191,8 +1194,8 @@ footer a:hover { color: #fff; }
   <h2 class="section-title">Tutto quello che devi sapere</h2>
   <div class="info-grid">
     <div class="info-card">
-      <span class="icon">📅</span>
-      <p class="big" style="color:var(--oro);font-size:2.2rem">7 GIU</p>
+      <span class="icon">🗓️</span>
+      <p class="big" style="color:var(--oro);font-size:2.2rem">7 GIUGNO</p>
       <p>Domenica 2026 · Torneo</p>
     </div>
     <div class="info-card">
