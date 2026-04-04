@@ -612,36 +612,38 @@ footer a:hover{color:var(--oro)}
   margin-bottom: 20px;
 }
 .countdown-grid {
-  display: flex; justify-content: center; gap: clamp(16px, 4vw, 40px);
-  flex-wrap: wrap;
+  display: flex; justify-content: center; gap: clamp(4px, 2vw, 40px);
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 .countdown-item {
   display: flex; flex-direction: column; align-items: center;
-  min-width: 70px;
+  min-width: 0; flex: 0 0 auto;
 }
 .countdown-num {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
   font-weight: 700;
   color: #fff;
   line-height: 1;
   text-shadow: 0 0 30px rgba(40,180,40,0.4);
   transition: color 0.3s;
 }
-.countdown-num.flash { color: var(--gold); }
+.countdown-num.flash { color: var(--oro); }
 .countdown-unit {
-  font-family: 'Barlow', sans-serif;
-  font-size: 0.7rem; letter-spacing: 0.2em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(0.5rem, 1.5vw, 0.7rem); letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .countdown-sep {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
   font-weight: 300; color: var(--muted);
   line-height: 1;
   align-self: flex-start; padding-top: 2px;
+  flex: 0 0 auto;
 }
 
 /* ─── DIVIDER ─── */
@@ -708,10 +710,16 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 }
 .prize-card:hover { transform: translateY(-6px); }
 .prize-card:hover::before { opacity: 1; }
-.prize-card.gold { border-color: rgba(245,197,24,0.35); }
-.prize-card.gold::before { background: radial-gradient(ellipse at top, rgba(245,197,24,0.08), transparent 60%); }
-.prize-card.silver { border-color: rgba(192,192,192,0.3); }
-.prize-card.silver::before { background: radial-gradient(ellipse at top, rgba(192,192,192,0.07), transparent 60%); }
+.prize-card.gold {
+  border-color: var(--oro);
+  background: linear-gradient(140deg, #2a1800, #5a3800);
+}
+.prize-card.gold::before { background: radial-gradient(ellipse at top, rgba(240,192,48,0.18), transparent 65%); }
+.prize-card.silver {
+  border-color: #aaa;
+  background: linear-gradient(140deg, #181818, #303030);
+}
+.prize-card.silver::before { background: radial-gradient(ellipse at top, rgba(200,200,200,0.12), transparent 65%); }
 .prize-card .medal { font-size: 2.8rem; display: block; margin-bottom: 10px; }
 .prize-card .position {
   font-family: 'Oswald', sans-serif; font-size: 0.8rem;
@@ -746,14 +754,15 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 }
 .reg-text p { font-size: 0.9rem; color: var(--muted); }
 .btn-reg {
-  background: transparent; color: var(--red);
-  border: 1px solid var(--red);
-  padding: 10px 22px; border-radius: 4px;
-  font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 0.08em;
+  background: var(--rosso); color: #fff;
+  border: 2px solid var(--rosso);
+  padding: 14px 28px; border-radius: 4px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.12em;
   text-transform: uppercase; white-space: nowrap;
   transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(204,31,31,0.4);
 }
-.btn-reg:hover { background: var(--red); color: #fff; }
+.btn-reg:hover { background: var(--rosso-d); border-color: var(--rosso-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(204,31,31,0.5); }
 
 /* ─── ISCRIZIONI ─── */
 .iscrizioni-grid {
@@ -1182,10 +1191,29 @@ footer a:hover { color: #fff; }
   <h2 class="section-title">Tutto quello che devi sapere</h2>
   <div class="info-grid">
     <div class="info-card">
-      <span class="icon">📅</span>
+      <!-- Icona calendario dinamica stile Samsung -->
+      <span class="icon" style="font-size:0;display:block;margin-bottom:12px">
+        <span id="cal-widget" style="
+          display:inline-flex;flex-direction:column;align-items:center;
+          width:56px;border-radius:8px;overflow:hidden;
+          box-shadow:0 2px 10px rgba(0,0,0,0.5);
+        ">
+          <span id="cal-month" style="
+            background:var(--rosso);color:#fff;width:100%;
+            font-family:'Barlow Condensed',sans-serif;font-weight:700;
+            font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+            padding:3px 0;text-align:center;
+          "></span>
+          <span id="cal-day" style="
+            background:#fff;color:#111;width:100%;
+            font-family:'Bebas Neue',sans-serif;font-size:2rem;
+            line-height:1.1;text-align:center;padding:2px 0 4px;
+          "></span>
+        </span>
+      </span>
       <h3>Data di oggi</h3>
-      <p class="big" id="oggi-giorno">--</p>
-      <p id="oggi-mese">--</p>
+      <p class="big" style="color:var(--oro)">7 GIU</p>
+      <p>Domenica 2026 · Torneo</p>
     </div>
     <div class="info-card">
       <span class="icon">📍</span>
@@ -1483,11 +1511,21 @@ footer a:hover { color: #fff; }
     lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     updateLightbox();
+    // Android back button support
+    history.pushState({ lightbox: true }, '');
   }
   function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
     document.body.style.overflow = '';
   }
+  // Intercetta tasto back Android
+  window.addEventListener('popstate', function(e) {
+    var lb = document.getElementById('lightbox');
+    if (lb && lb.style.display !== 'none') {
+      lb.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
   function navLightbox(dir) {
     lbIndex = (lbIndex + dir + galleryPhotos.length) % galleryPhotos.length;
     updateLightbox();
@@ -1537,7 +1575,7 @@ footer a:hover { color: #fff; }
       <div class="logo-card"><img src="img/logo_aido_gorle.png" alt="AIDO Gruppo Comunale Gorle" loading="lazy"></div>
     </div>
   </div>
-  <div class="org-group">
+  <div class="org-group big-logos">
     <div class="org-group-label">Con il patrocinio di</div>
     <div class="logos-grid">
       <div class="logo-card"><img src="img/logo_comune_cavernago.png" alt="Comune di Cavernago" loading="lazy"></div>
@@ -1568,12 +1606,11 @@ footer a:hover { color: #fff; }
 /* ── DATA OGGI ── */
 (function(){
   var MESI = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
-  var GIORNI = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
   var d = new Date();
-  var gg = document.getElementById('oggi-giorno');
-  var mm = document.getElementById('oggi-mese');
-  if(gg) gg.textContent = d.getDate() + ' ' + MESI[d.getMonth()];
-  if(mm) mm.textContent = GIORNI[d.getDay()] + ' ' + d.getFullYear();
+  var calDay   = document.getElementById('cal-day');
+  var calMonth = document.getElementById('cal-month');
+  if(calDay)   calDay.textContent   = d.getDate();
+  if(calMonth) calMonth.textContent = MESI[d.getMonth()];
 })();
 
 /* ── COUNTDOWN ── */
