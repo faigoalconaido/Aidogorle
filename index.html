@@ -1191,28 +1191,8 @@ footer a:hover { color: #fff; }
   <h2 class="section-title">Tutto quello che devi sapere</h2>
   <div class="info-grid">
     <div class="info-card">
-      <!-- Icona calendario dinamica stile Samsung -->
-      <span class="icon" style="font-size:0;display:block;margin-bottom:12px">
-        <span id="cal-widget" style="
-          display:inline-flex;flex-direction:column;align-items:center;
-          width:56px;border-radius:8px;overflow:hidden;
-          box-shadow:0 2px 10px rgba(0,0,0,0.5);
-        ">
-          <span id="cal-month" style="
-            background:var(--rosso);color:#fff;width:100%;
-            font-family:'Barlow Condensed',sans-serif;font-weight:700;
-            font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
-            padding:3px 0;text-align:center;
-          "></span>
-          <span id="cal-day" style="
-            background:#fff;color:#111;width:100%;
-            font-family:'Bebas Neue',sans-serif;font-size:2rem;
-            line-height:1.1;text-align:center;padding:2px 0 4px;
-          "></span>
-        </span>
-      </span>
-      <h3>Data di oggi</h3>
-      <p class="big" style="color:var(--oro)">7 GIU</p>
+      <span class="icon">📅</span>
+      <p class="big" style="color:var(--oro);font-size:2.2rem">7 GIU</p>
       <p>Domenica 2026 · Torneo</p>
     </div>
     <div class="info-card">
@@ -1352,7 +1332,7 @@ footer a:hover { color: #fff; }
     <div class="map-frame">
       <iframe
         loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=Centro+Sportivo+Comunale+Cavernago,+Via+G.+Ungaretti+66,+24050+Cavernago+BG&t=m&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.5!2d9.7597173!3d45.6215116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781449de87a7ad9%3A0xbd35a9b2fb15e6ad!2sCentro%20sportivo%20comunale%20M.llo%20Luigi%20D&#39;Andrea!5e0!3m2!1sit!2sit!4v1700000000000"
         title="Centro Sportivo Cavernago">
       </iframe>
     </div>
@@ -1590,12 +1570,7 @@ footer a:hover { color: #fff; }
 <script>
 /* ── DATA OGGI ── */
 (function(){
-  var MESI = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
-  var d = new Date();
-  var calDay   = document.getElementById('cal-day');
-  var calMonth = document.getElementById('cal-month');
-  if(calDay)   calDay.textContent   = d.getDate();
-  if(calMonth) calMonth.textContent = MESI[d.getMonth()];
+
 })();
 
 /* ── COUNTDOWN ── */
