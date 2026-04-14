@@ -27,7 +27,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco);overflow-x:hidden}
 
-/* ── TOP BAR ── */
+/* TOP BAR */
 .top-bar{
   background:var(--rosso);
   padding:10px 24px;
@@ -38,7 +38,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .top-bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4)}
 .top-bar a:hover{border-color:#fff}
 
-/* ── HERO ── */
+/* HERO */
 .hero{
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0.025) 0px,rgba(255,255,255,0.025) 30px,transparent 30px,transparent 60px),
@@ -98,7 +98,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
   letter-spacing:0.1em;text-transform:uppercase;
 }
 
-/* ── SEZIONI ── */
+/* SEZIONI */
 .section{padding:80px 24px}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-label{
@@ -112,7 +112,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
   color:var(--bianco);margin-bottom:40px;
 }
 
-/* ── INFO CARDS ── */
+/* INFO CARDS */
 .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .card{
   background:rgba(255,255,255,0.04);
@@ -131,7 +131,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .card p{font-size:1rem;color:var(--bianco);line-height:1.5}
 .card .big{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--oro);line-height:1}
 
-/* ── PREMI ── */
+/* PREMI */
 .premi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 @media(max-width:580px){.premi-grid{grid-template-columns:1fr}}
 .premio{border-radius:10px;padding:36px 28px;text-align:center;position:relative;overflow:hidden}
@@ -148,7 +148,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .premio.secondo .importo{color:#ccc}
 .premio .nota{font-size:0.88rem;color:rgba(255,255,255,0.5);margin-top:8px;font-style:italic}
 
-/* ── ISCRIZIONE ── */
+/* ISCRIZIONE */
 .iscrizione-box{
   background:linear-gradient(135deg,rgba(26,122,46,0.18),rgba(37,168,64,0.08));
   border:1px solid rgba(61,204,90,0.25);border-radius:12px;padding:44px;
@@ -176,7 +176,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 }
 .contatti-box a:hover{color:var(--oro)}
 
-/* ── ATTIVITÀ ── */
+/* ATTIVITÀ */
 .attivita-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
 .attivita-card{
   background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);
@@ -188,7 +188,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .attivita-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--bianco);margin-bottom:6px}
 .attivita-card p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.5}
 
-/* ── MAPPA ── */
+/* MAPPA */
 .mappa-section{background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
 .mappa-inner{
   max-width:1100px;margin:0 auto;padding:80px 24px;
@@ -213,7 +213,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .map-frame{border-radius:10px;overflow:hidden;border:2px solid rgba(61,204,90,0.22);aspect-ratio:4/3}
 .map-frame iframe{width:100%;height:100%;border:0;display:block}
 
-/* ── LOTTERIA ── */
+/* LOTTERIA */
 .lottery{
   background:linear-gradient(90deg,var(--verde),#1a5c20,var(--verde));
   padding:22px;text-align:center;
@@ -222,7 +222,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
   border-top:3px solid var(--oro);border-bottom:3px solid var(--oro);
 }
 
-/* ── ORGANIZZATORI ── */
+/* ORGANIZZATORI */
 .org-section{
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0.02) 0,rgba(255,255,255,0.02) 30px,transparent 30px,transparent 60px),
@@ -285,7 +285,7 @@ body{font-family:'Barlow',sans-serif;background:var(--scuro);color:var(--bianco)
 .org-group.big-logos .logo-card{width:220px}
 .org-group.big-logos .logo-card img{height:180px}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{
   background:#040a05;padding:30px 24px;text-align:center;
   border-top:3px solid var(--rosso);
@@ -299,8 +299,7 @@ footer a:hover{color:var(--oro)}
   to{opacity:1;transform:translateY(0)}
 }
 
-
-/* ─── STICKY TOP BAR ─── */
+/* STICKY TOP BAR */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: rgba(10,15,10,0.92);
@@ -322,7 +321,7 @@ footer a:hover{color:var(--oro)}
 }
 .topbar-cta:hover { background: var(--red2); }
 
-/* ── TOP BAR ── */
+/* TOP BAR */
 .top-bar{
   background:var(--rosso);
   padding:10px 24px;
@@ -333,7 +332,7 @@ footer a:hover{color:var(--oro)}
 .top-bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4)}
 .top-bar a:hover{border-color:#fff}
 
-/* ── HERO ── */
+/* HERO */
 .hero{
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0.025) 0px,rgba(255,255,255,0.025) 30px,transparent 30px,transparent 60px),
@@ -393,7 +392,7 @@ footer a:hover{color:var(--oro)}
   letter-spacing:0.1em;text-transform:uppercase;
 }
 
-/* ─── STICKY TOP BAR ─── */
+/* STICKY TOP BAR */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: rgba(10,15,10,0.92);
@@ -415,7 +414,7 @@ footer a:hover{color:var(--oro)}
 }
 .topbar-cta:hover { background: var(--red2); }
 
-/* ─── HERO ─── */
+/* HERO */
 .hero {
   position: relative;
   overflow: hidden;
@@ -589,14 +588,13 @@ footer a:hover{color:var(--oro)}
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
 
-
 /* Fade animations */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── COUNTDOWN ─── */
+/* COUNTDOWN */
 .countdown-section {
   background: var(--dark2);
   border-top: 1px solid var(--border);
@@ -646,14 +644,14 @@ footer a:hover{color:var(--oro)}
   flex: 0 0 auto;
 }
 
-/* ─── DIVIDER ─── */
+/* DIVIDER */
 .divider {
   width: 100%; height: 2px;
   background: linear-gradient(90deg, transparent, var(--red) 40%, var(--red) 60%, transparent);
   opacity: 0.6;
 }
 
-/* ─── SECTION ─── */
+/* SECTION */
 section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .section-label{
   font-family:'Barlow Condensed',sans-serif;font-weight:700;
@@ -666,7 +664,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
   color:var(--bianco);margin-bottom:40px;
 }
 
-/* ─── INFO GRID ─── */
+/* INFO GRID */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -690,7 +688,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .info-card .big{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--oro);line-height:1}
 .info-card p{font-size:1rem;color:var(--bianco);line-height:1.5}
 
-/* ─── PREMI ─── */
+/* PREMI */
 .prizes-wrap { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
 .prize-card {
   background: var(--card); border: 1px solid var(--border);
@@ -731,8 +729,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .prize-card.silver .amount { color: var(--silver); }
 .prize-card .desc { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
 
-
-/* ─── REGOLAMENTO BANNER ─── */
+/* REGOLAMENTO BANNER */
 .reg-banner {
   margin: 0 24px 64px;
   max-width: 912px; /* 960 - 2*24 */
@@ -761,7 +758,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 }
 .btn-reg:hover { background: var(--rosso-d); border-color: var(--rosso-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(204,31,31,0.5); }
 
-/* ─── ISCRIZIONI ─── */
+/* ISCRIZIONI */
 .iscrizioni-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
 }
@@ -809,7 +806,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .btn-web { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.25); }
 .btn-web:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
-/* ─── ATTIVITÀ ─── */
+/* ATTIVITÀ */
 .attivita-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -825,7 +822,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .att-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--bianco);margin-bottom:6px}
 .att-card p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.5}
 
-/* ─── MAPPA ─── */
+/* MAPPA */
 .mappa-section {
   background: var(--dark2);
   border-top: 1px solid var(--border);
@@ -861,7 +858,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .map-frame{border-radius:10px;overflow:hidden;border:2px solid rgba(61,204,90,0.22);aspect-ratio:4/3}
 .map-frame iframe{width:100%;height:100%;border:0;display:block}
 
-/* ─── LOTTERIA BANNER ─── */
+/* LOTTERIA BANNER */
 .lottery{
   background:linear-gradient(90deg,var(--verde),#1a5c20,var(--verde));
   padding:22px;text-align:center;
@@ -870,7 +867,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
   border-top:3px solid var(--oro);border-bottom:3px solid var(--oro);
 }
 
-/* ─── GALLERIA EDIZIONE PRECEDENTE ─── */
+/* GALLERIA EDIZIONE PRECEDENTE */
 .gallery-section {
   padding: 72px 24px;
   max-width: 960px; margin: 0 auto;
@@ -993,7 +990,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
   content: '📸  Apri la galleria completa →';
 }
 
-/* ─── CONDIVIDI ─── */
+/* CONDIVIDI */
 .share-section {
   padding: 64px 24px 0;
   max-width: 960px; margin: 0 auto;
@@ -1072,7 +1069,7 @@ section { padding: 72px 24px; max-width: 960px; margin: 0 auto; }
 .org-group.big-logos .logo-card{width:220px}
 .org-group.big-logos .logo-card img{height:180px}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{
   background:#040a05;padding:30px 24px;text-align:center;
   border-top:3px solid var(--rosso);
@@ -1081,7 +1078,7 @@ footer p{font-size:0.85rem;color:rgba(255,255,255,0.35);line-height:1.9}
 footer a{color:var(--verde-l);text-decoration:none}
 footer a:hover{color:var(--oro)}
 
-/* ─── STICKY MOBILE CTA ─── */
+/* STICKY MOBILE CTA */
 .mobile-cta {
   display: none;
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
@@ -1100,7 +1097,7 @@ footer a:hover{color:var(--oro)}
   padding: 12px 10px; font-size: 0.9rem;
 }
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .hero { min-height: 100svh; }
   .topbar { padding: 8px 16px; }
@@ -1111,19 +1108,18 @@ footer a:hover{color:var(--oro)}
 </head>
 <body>
 
-<!-- ─── TOPBAR (appare dopo scroll) ─── -->
+<!-- topbar -->
 <div class="topbar" id="topbar">
   <span class="topbar-title">⚽ Torneo AIDO Bergamo – 7 Giugno 2026</span>
   <a href="tel:035235326" class="topbar-cta">📞 Iscriviti</a>
 </div>
 
-<!-- TOP BAR -->
+<!-- header -->
 <div class="top-bar">
   🔴 AIDO – Associazione Italiana Donatori di Organi &nbsp;|&nbsp;
   <a href="https://www.aidobergamo.it" target="_blank" rel="noopener">aidobergamo.it</a>
 </div>
 
-<!-- ── HERO ── -->
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-text">
@@ -1160,7 +1156,7 @@ footer a:hover{color:var(--oro)}
     <span class="loc">⚽ Calcetto a 5 su erba</span>
   </div>
 </header>
-<!-- ─── COUNTDOWN ─── -->
+<!-- countdown -->
 <div class="countdown-section">
   <p class="countdown-label">🏆 Conto alla rovescia – 7 Giugno 2026</p>
   <div class="countdown-grid">
@@ -1188,7 +1184,7 @@ footer a:hover{color:var(--oro)}
 
 <div class="divider"></div>
 
-<!-- ─── INFO GENERALI ─── -->
+<!-- info -->
 <section id="info">
   <p class="section-label">Informazioni generali</p>
   <h2 class="section-title">Tutto quello che devi sapere</h2>
@@ -1217,7 +1213,7 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
-<!-- ─── PREMI ─── -->
+<!-- premi -->
 <section id="premi">
   <p class="section-label">Premi</p>
   <h2 class="section-title">In palio per i vincitori</h2>
@@ -1239,7 +1235,7 @@ footer a:hover{color:var(--oro)}
 
 <div class="divider"></div>
 
-<!-- ─── REGOLAMENTO ─── -->
+<!-- regolamento -->
 <div class="reg-banner" id="regolamento">
   <div class="reg-text">
     <h3>📋 Leggi il Regolamento Ufficiale</h3>
@@ -1248,7 +1244,7 @@ footer a:hover{color:var(--oro)}
   <a href="regolamento.html" class="btn-reg">Vai al Regolamento →</a>
 </div>
 
-<!-- ─── ISCRIZIONI ─── -->
+<!-- iscrizioni -->
 <section id="iscrizioni">
   <p class="section-label">Iscrizioni</p>
   <h2 class="section-title">Come partecipare</h2>
@@ -1278,7 +1274,7 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
-<!-- ─── ATTIVITÀ ─── -->
+<!-- attivita -->
 <section id="attivita">
   <p class="section-label">Durante la giornata</p>
   <h2 class="section-title">Molto più di una partita</h2>
@@ -1311,7 +1307,7 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
-<!-- ─── MAPPA ─── -->
+<!-- mappa -->
 <div class="mappa-section" id="mappa">
   <div class="mappa-inner">
     <div class="mappa-info">
@@ -1342,10 +1338,10 @@ footer a:hover{color:var(--oro)}
   </div>
 </div>
 
-<!-- ─── LOTTERIA ─── -->
+<!-- lotteria -->
 <div class="lottery">🎟️ Lotteria con Superpremi per tutti i Presenti 🎟️</div>
 
-<!-- ─── GALLERIA EDIZIONE PRECEDENTE ─── -->
+<!-- galleria -->
 <section class="gallery-section">
   <p class="section-label">Edizione 2025</p>
   <h2 class="section-title">Com'è andata l'anno scorso</h2>
@@ -1371,7 +1367,7 @@ footer a:hover{color:var(--oro)}
     </a>
   </div>
 
-  <!-- Mosaico foto – immagini locali ottimizzate -->
+  
   <div class="gallery-mosaic" id="galleryMosaic">
     <div class="mosaic-cell featured" onclick="openLightbox(0)">
       <img src="img/gallery/gallery_01_cavernago.jpg"   alt="AIDO Cavernago – Torneo 2025"        loading="lazy">
@@ -1426,7 +1422,7 @@ footer a:hover{color:var(--oro)}
     🖱️ <em>Clicca su una foto per ingrandirla</em>
   </p>
 
-  <!-- LIGHTBOX -->
+  
   <div id="lightbox" onclick="closeLightbox()" style="
     display:none; position:fixed; inset:0; z-index:9999;
     background:rgba(0,0,0,0.92); backdrop-filter:blur(8px);
@@ -1478,15 +1474,13 @@ footer a:hover{color:var(--oro)}
     lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     updateLightbox();
-    // Android back button support
     history.pushState({ lightbox: true }, '');
   }
   function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
     document.body.style.overflow = '';
   }
-  // Intercetta tasto back Android
-  window.addEventListener('popstate', function(e) {
+window.addEventListener('popstate', function(e) {
     var lb = document.getElementById('lightbox');
     if (lb && lb.style.display !== 'none') {
       lb.style.display = 'none';
@@ -1514,7 +1508,7 @@ footer a:hover{color:var(--oro)}
   </script>
 </section>
 
-<!-- ─── CONDIVIDI ─── -->
+<!-- condividi -->
 <div class="share-section">
   <span class="section-label">Passa la parola</span>
   <h2>Porta la tua squadra!</h2>
@@ -1532,7 +1526,7 @@ footer a:hover{color:var(--oro)}
   </div>
 </div>
 
-<!-- ─── ORGANIZZATORI ─── -->
+<!-- organizzatori -->
 <section class="org-section">
   <h2 class="org-title">Chi c'è dietro questo torneo</h2>
   <div class="org-group big-logos">
@@ -1553,7 +1547,7 @@ footer a:hover{color:var(--oro)}
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- footer -->
 <footer>
   <p>
     Torneo di Calcetto a 5 su Erba &bull; 7 Giugno 2026 &bull; Centro Sportivo di Cavernago (BG)<br>
@@ -1564,21 +1558,21 @@ footer a:hover{color:var(--oro)}
   </p>
 </footer>
 
-<!-- ─── STICKY MOBILE CTA ─── -->
+<!-- mobile-cta -->
 <div class="mobile-cta">
   <a href="tel:035235326" class="btn btn-primary">📞 Chiama</a>
   <a href="https://aidobergamo.it/contatti/" target="_blank" rel="noopener" class="btn btn-secondary">🌐 Iscriviti</a>
 </div>
 
 <script>
-/* ── DATA OGGI ── */
+/* DATA OGGI */
 (function(){
 
 })();
 
-/* ── COUNTDOWN ── */
+/* COUNTDOWN */
 function updateCountdown() {
-  const target = new Date('2026-06-07T09:00:00+02:00'); // ore 9:00 ora italiana
+  const target = new Date('2026-06-07T09:00:00+02:00');
   const now = new Date();
   const diff = target - now;
   if (diff <= 0) {
@@ -1608,13 +1602,13 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* ── TOPBAR ON SCROLL ── */
+/* TOPBAR ON SCROLL */
 window.addEventListener('scroll', () => {
   const heroH = document.getElementById('hero').offsetHeight;
   document.getElementById('topbar').classList.toggle('visible', window.scrollY > heroH * 0.5);
 }, { passive: true });
 
-/* ── SOCIAL SHARE ── */
+/* SOCIAL SHARE */
 const URL = 'https://faigoalconaido.github.io/Aidoprovinciale/';
 const MSG = '⚽ Torneo di Calcetto AIDO Bergamo – 7 Giugno 2026 a Cavernago! Un assist per la vita: scegli il sì. 🔴 ' + URL;
 
